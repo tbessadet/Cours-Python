@@ -1,27 +1,33 @@
-deactivate
-rm -rf Enviro/ml-deep Enviro/ml-env
-python -m venv Enviro/venv/ml-deep --prompt ml-deep
-source Enviro/venv/ml-deep/Scripts/activate
+﻿### Nouvelle installation (PC fixe ou portable) - Git Bash, depuis C:/cours_code/Python
+# Prerequis : Python 3.12 (ex. PowerShell : winget install --id Python.Python.3.12 --scope user)
+# GPU : torch en CUDA 12.8 (cu128) -> compatible RTX 5070 Ti et 4060 (portable)
+# Le dossier Enviro/.venv est ignore par git : on le recree a chaque machine.
+
+cd /c/cours_code/Python
+deactivate 2>/dev/null
+rm -rf Enviro/.venv
+py -3.12 -m venv Enviro/.venv --prompt ml-deep
+source Enviro/.venv/Scripts/activate
 python -m pip install --upgrade pip
 python -m pip install -r Enviro/requirements/ml-deep.txt
 
+### Verifier
+python --version
 python -m pip check
 python -c "import numpy, torch; print(numpy.__version__, torch.__version__, torch.cuda.is_available())"
 
-### Verifier le .gitignore du gitignor
-
-git check-ignore -v Enviro/venv/ml-deep/pyvenv.cfg
-git status
-
+# Kernel Jupyter (VS Code)
 python -m ipykernel install --user --name ml-deep --display-name "ML Deep"
 
+### Verifier le .gitignore
+git check-ignore -v Enviro/.venv/pyvenv.cfg
+git status
 
-### Exporter venv 
+
+### Exporter l'environnement (apres ajout de paquets, puis commit + push)
 { echo "--extra-index-url https://download.pytorch.org/whl/cu128"; python -m pip freeze; } > Enviro/requirements/ml-deep.txt
 
 
-###Après git pull
-python -m venv Enviro/venv/ml-deep --prompt ml-deep
-source Enviro/venv/ml-deep/Scripts/activate
-python -m pip install --upgrade pip
+### Apres git pull sur l'autre machine (si requirements modifie)
+source Enviro/.venv/Scripts/activate
 python -m pip install -r Enviro/requirements/ml-deep.txt

@@ -1,2 +1,12 @@
 ML_2A_vguigue/Kaggle/diabetes_large_dataset.csv
+
+# Environnement virtuel (recree via Enviro/install.txt)
+Enviro/.venv/
 Enviro/venv/
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
