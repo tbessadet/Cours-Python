@@ -3,12 +3,31 @@ import pandas as pd
 from sklearn.base import BaseEstimator, TransformerMixin
 
 
+class ArrondirModalites(BaseEstimator, TransformerMixin):
+    def __init__(self, bornes=None):
+        self.bornes = bornes
+
+    def fit(self, X, y=None):
+        self.feature_names_in_ = np.array(X.columns)
+        return self
+
+    def transform(self, X):
+        X = X.copy()
+        for c, (lo, hi) in self.bornes.items():
+            X[c] = X[c].round().clip(lo, hi)
+        return X
+
+    def get_feature_names_out(self, input_features=None):
+        return self.feature_names_in_
+
+
 class ColumnFilter(BaseEstimator, TransformerMixin):
     def __init__(self, corr_feat=None, const_share=None, corr_y=None, prioritaires=None):
         self.corr_feat, self.const_share, self.corr_y = corr_feat, const_share, corr_y
         self.prioritaires = prioritaires
 
     def fit(self, X, y=None):
+        self.n_in_ = X.shape[1]
         drop = set()
         if self.const_share is not None:
             for c in X.columns:
