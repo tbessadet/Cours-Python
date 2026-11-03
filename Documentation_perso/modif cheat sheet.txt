@@ -1,5 +1,0 @@
-Cheat_sheet sklearn_modeles_evaluation :
-    rajoute la description  de n_features= pour le "make_blobs"
-    Dans 5. Métriques d'évalution, rajoute la fonction recall en dessous de la fonction accuracy
-    Pour optuna, rajoute la signification de "objective", "n_trial = 'budget?'"
-    rajouter CalibratedClassifierCV()
