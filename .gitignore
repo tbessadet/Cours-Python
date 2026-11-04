@@ -13,3 +13,6 @@ __pycache__/
 
 # Fichiers systeme macOS
 .DS_Store
+
+# Ajoutes automatiquement par sync (fichiers > 50 Mo)
+/ML_2A_vguigue/Kaggle/cache_selection/folds_full_10plis.joblib
