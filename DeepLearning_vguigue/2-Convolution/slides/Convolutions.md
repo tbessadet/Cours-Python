@@ -30,4 +30,20 @@ $\to$ mapping des scores par pixel nous montre l'endroit de l'image important po
 On supprime la tête (réseau de neuronne ...)  
 On le remplace par ... décision linéaire et on fait une saillance map  
 
+### Graph Neural Network
+**Passer convolution à logique sur graphs :**  
+Convolution : "caractériser le pixel du centre p/r aux voisins"  
+Graph : "caractériser mon noeud p/r aux voisins". Prbl : nbr de voisins changent tt le temps, poids ...  
 
+**edge ($e_{ij}$):**  
+Nature du lien entre les 2 noeuds, accésoire  
+
+**nombres filtres ($n_i$):**  
+$n_i$ dépend du nombre de voisins  
+
+**Message Passing :**  
+ψ : réseau de neuronnes (ex MLP)  
+Possibilité de brancher des losses sur :
+- noeuds (nodes)
+- arcs (edges)
+- graphes entier
