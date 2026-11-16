@@ -23,8 +23,11 @@ Les numéros entre crochets [n] sont les numéros des cellules du notebook (en c
 
 <span style="color:#1e6fd9">**Montrer** : la cellule markdown du titre [1].</span>
 
-<img src="screen_add/0.png" alt="Présentation du dataset" style="border: 3px solid white; padding: 4px;">
-
+<figure style="text-aligne:center">
+    <h3>Mon titre</h3>
+    <img src="screen_add/0.png" style="border: 3px solid white; padding: 4px;" title="test infobulle">
+    <figcaption>Figure 1 : Test titre</figcaption>
+</figure>
 **À dire** :
 - « Dataset Kaggle synthétique : 100 000 patients et 209 variables (biologie, mode de vie, environnement, antécédents…). »
 - « La cible est `diabetes_status`. Il y a 28 % de diabétiques, donc les classes sont déséquilibrées. J'ai écarté `diabetes_type` : Type 1 et gestationnel sont presque absents. »
