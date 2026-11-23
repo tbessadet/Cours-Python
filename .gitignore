@@ -16,3 +16,9 @@ __pycache__/
 
 # Ajoutes automatiquement par sync (fichiers > 50 Mo)
 /ML_2A_vguigue/Kaggle/cache_selection/folds_full_10plis.joblib
+
+# Gros jeux de donnees (a retelecharger)
+**/donnees_jds.zip
+**/aclImdb.zip
+**/glove.zip
+DeepLearning_vguigue/DM/data/eurosat/
