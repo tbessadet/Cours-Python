@@ -22,3 +22,6 @@ __pycache__/
 **/aclImdb.zip
 **/glove.zip
 DeepLearning_vguigue/DM/data/eurosat/
+
+# Garder les artefacts MLflow du DM (ignores par defaut par le gitignore global)
+!DeepLearning_vguigue/DM/mlruns/

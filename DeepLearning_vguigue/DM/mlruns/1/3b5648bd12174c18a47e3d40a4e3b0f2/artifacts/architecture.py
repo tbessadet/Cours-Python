@@ -1,0 +1,1 @@
+<CNN.Modele object at 0x0000029C9BD48F80>
